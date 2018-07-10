@@ -10,21 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int *a, int *b)
+#include <unistd.h>
+
+void	ft_ultimate_div_mod(int *a, int *b)
 {
 	int temp_int;
 
 	temp_int = *a;
 	*a = *b;
 	*b = temp_int;
-}
-
-int		main()
-{
-	int a;
-	int b;
-
-	a = 100;
-	b = 10;
-	ft_div_mod(a, b);
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmaguire <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,41 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 #include <stdio.h>
 
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str) {
+	// calculate 10 ^ strlen(str)
+	int hd_pow10 = 1;
+	for (const char *s = str + 1; *s != '\0'; s++)
+		hd_pow10 *= 10;
 
-int		ft_atoi(const char *str)
-{
-	int i;
-	int negative;
-	int out;
-
-	i = 0;
-	negative = 1;
-	if (!*str)
-	{
-		printf("%s\n", "ERROR: str null!");
-		return (0);
+	// grab digits from string
+	int out = 0;
+	for (const char *s = str; *s != '\0'; s++) {
+		out += hd_pow10 * (*s - 0x30);
+		hd_pow10 /= 10;
 	}
-	if (str[0] == '-')
-	{
-		negative = -1;
-	}
-	while (*str != '\0')
-	{
-		
-		i++;
-	}
-	out = 0 * negative;
 	return out;
 }
 
-int		main(void)
-{
+int		main(void) {
+	printf("%d\n", ft_atoi("1212234"));
 	printf("%d\n", ft_atoi("7423334"));
-	printf("%d\n", ft_atoi("0"));
-	printf("%d\n", ft_atoi("-7423334"));
-	return (0);	
+	printf("%d\n", ft_atoi("12233134"));
+	printf("%d\n", ft_atoi("123333214"));
+	printf("%d\n", ft_atoi("1656455"));
+	return 0;
 }

@@ -12,27 +12,13 @@
 
 #include <unistd.h>
 
-void	ft_swap(int *a, int *b);
-
 void	ft_swap(int *a, int *b)
 {
 	int a_swap;
 	int b_swap;
 
-	a_swap = *b;
-	b_swap = *a;
-
-	write(1, &a_swap, 1);
-	write(1, &b_swap, 1);
-}
-
-int		main(void)
-{
-	int a;
-	int b;
-
-	a = 1;
-	b = 2;
-	ft_swap(&a, &b);
-	return (0);
+	a_swap = *a;
+	b_swap = *b;
+	*a = b_swap;
+	*b = a_swap;
 }

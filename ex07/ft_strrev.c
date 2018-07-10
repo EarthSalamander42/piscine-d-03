@@ -10,17 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <unistd.h>
-
-void	ft_putchar(char c);
-char	*ft_strrev(char *str);
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-*/
-
 char	*ft_strrev(char *str)
 {
 	int i;
@@ -34,7 +23,7 @@ char	*ft_strrev(char *str)
 	{
 		length = length + 1;
 	}
-	i = length - 1; /* swap characters using a temp table */
+	i = length - 1;
 	j = 0;
 	while (j <= length)
 	{
@@ -45,13 +34,3 @@ char	*ft_strrev(char *str)
 	}
 	return (str);
 }
-
-/*
-int		main(void)
-{
-	char str[] = "EarthSalamander #42";
-
-	ft_strrev(str);
-
-	return (0);
-} */

@@ -10,12 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-/*
-int		ft_strlen(char *str);
-*/
-
 int		ft_strlen(char *str)
 {
 	int i;
@@ -25,17 +19,5 @@ int		ft_strlen(char *str)
 	{
 		i = i + 1;
 	}
-	return i;
+	return (i);
 }
-
-/*
-int		main(void)
-{
-	char *str = "EarthSalamander #42";
-	char c;
-
-	ft_strlen(str);
-	write(1, &c, 1);
-	c = ft_strlen(str) + '0';
-}
-*/
