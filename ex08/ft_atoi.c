@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-
-int		ft_atoi(const char *str);
-
 int		ft_atoi(const char *str)
 {
 	int i;
@@ -23,28 +18,19 @@ int		ft_atoi(const char *str)
 
 	i = 0;
 	negative = 1;
-	if (!*str)
-	{
-		printf("%s\n", "ERROR: str null!");
-		return (0);
-	}
+	if ((str[i] >= 9 && str[i] <= 13) || (str[i] == ' '))
+		i++;
 	if (str[0] == '-')
 	{
 		negative = -1;
-	}
-	while (*str != '\0')
-	{
-		
 		i++;
 	}
-	out = 0 * negative;
-	return out;
-}
-
-int		main(void)
-{
-	printf("%d\n", ft_atoi("7423334"));
-	printf("%d\n", ft_atoi("0"));
-	printf("%d\n", ft_atoi("-7423334"));
-	return (0);	
+	else if (str[i] == '+')
+		i++;
+	while (str[i] != '\0')
+	{
+		out = out * 10 + str[i] - 48;
+		i++;
+	}
+	return (negative * out);
 }

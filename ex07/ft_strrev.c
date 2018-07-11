@@ -6,19 +6,18 @@
 /*   By: jmaguire <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/07 17:13:03 by jmaguire          #+#    #+#             */
-/*   Updated: 2018/07/07 22:30:50 by jmaguire         ###   ########.fr       */
+/*   Updated: 2018/07/10 13:29:04 by jmaguire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrev(char *str)
 {
-	int i;
-	int j;
-	int length;
+	int		i;
+	int		j;
+	int		length;
+	char	temp;
 
-	/* table length */
 	length = 0;
-	char temp[length];
 	while (str[length] != '\0')
 	{
 		length = length + 1;
@@ -27,8 +26,7 @@ char	*ft_strrev(char *str)
 	j = 0;
 	while (j <= length)
 	{
-		temp[j] = str[i];
-		ft_putchar(str[i]);
+		temp = str[i];
 		i--;
 		j++;
 	}
