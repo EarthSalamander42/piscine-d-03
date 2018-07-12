@@ -10,15 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	ft_swap(int *a, int *b)
 {
-	int a_swap;
-	int b_swap;
+	int temp;
 
-	a_swap = *a;
-	b_swap = *b;
-	*a = b_swap;
-	*b = a_swap;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
